@@ -2,15 +2,15 @@ import request from '@/utils/request'
 
 export function fetchList(query) {
   return request({
-    url: '/admin/articles',
+    url: '/admin/tags',
     method: 'get',
     params: query
   })
 }
 
-export function fetchArticle(id) {
+export function fetchTags(id) {
   return request({
-    url: '/admin/article/' + id,
+    url: '/admin/tag/' + id,
     method: 'get'//,
     // params: { id }
   })
@@ -24,25 +24,25 @@ export function fetchPv(pv) {
   })
 }
 
-export function createArticle(data) {
+export function createTags(data) {
   return request({
-    url: '/admin/article',
+    url: '/admin/tag',
     method: 'post',
     data
   })
 }
 
-export function updateArticle(data) {
+export function updateTags(data) {
   return request({
-    url: '/article' + data.id(),
+    url: '/admin/tag/' + data.id,
     method: 'put',
     data
   })
 }
 
-export function deleteArticle(id) {
+export function deleteTags(id) {
   return request({
-    url: '/admin/article/' + id,
+    url: '/admin/tag/' + id,
     method: 'delete'
   })
 }

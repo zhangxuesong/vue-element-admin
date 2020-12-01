@@ -28,7 +28,7 @@ export default {
       type: Number,
       default: 1
     },
-    limit: {
+    num: {
       type: Number,
       default: 20
     },

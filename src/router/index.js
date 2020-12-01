@@ -221,6 +221,68 @@ export const asyncRoutes = [
       }
     ]
   },
+  {
+    path: '/tags',
+    component: Layout,
+    redirect: '/tags/list',
+    name: '标签管理',
+    meta: {
+      title: '标签管理',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'create',
+        component: () => import('@/views/tags/create'),
+        name: '新建标签',
+        meta: { title: '新建标签', icon: 'edit' }
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/tags/edit'),
+        name: '编辑标签',
+        meta: { title: '编辑标签', noCache: true, activeMenu: '/tags/list' },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/tags/list'),
+        name: '标签列表',
+        meta: { title: '标签列表', icon: 'list' }
+      }
+    ]
+  },
+  {
+    path: '/article',
+    component: Layout,
+    redirect: '/article/list',
+    name: '文章管理',
+    meta: {
+      title: '文章管理',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'create',
+        component: () => import('@/views/article/create'),
+        name: 'CreateArticle',
+        meta: { title: 'createArticle', icon: 'edit' }
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/article/edit'),
+        name: 'EditArticle',
+        meta: { title: 'editArticle', noCache: true, activeMenu: '/article/list' },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/article/list'),
+        name: 'ArticleList',
+        meta: { title: 'articleList', icon: 'list' }
+      }
+    ]
+  },
 
   {
     path: '/tab',
